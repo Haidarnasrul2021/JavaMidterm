@@ -13,3 +13,23 @@ public class FindMissingNumber {
 
     }
 }
+
+    public static void main(String[] args) {
+
+ }
+    int missingNum = pickMissingNum(array,9);
+        System.out.println("The Missing Number is: "+missingNum);
+                }
+
+
+//Static Helper method to calculate Missing number
+static int pickMissingNum (int a[], int n)
+        {
+        int total;
+        total  = (n+1)*(n+2)/2;
+        for ( int i = 0; i< n; i++)
+        total = total-a[i];
+        return total;
+        }
+
+        }

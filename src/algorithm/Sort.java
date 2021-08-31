@@ -9,6 +9,7 @@ public class Sort {
      */
 
     public static void printSortedArray(int[] array) {
+
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
@@ -49,43 +50,206 @@ public class Sort {
 
     public int[] bubbleSort(int[] array) {
         int[] list = array;
-        //implement here
+
+
+        //implemented here
+
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++)
+            for (int j = 0; j < n - i - 1; j++)
+                if (array[j] > array[j + 1]) {
+                    // swap arr[j+1] and arr[i]
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+        return list;
+    }
+
+    void merge(int array[], int l, int m, int r) {
+        int n1 = m - l + 1;
+        int n2 = r - m;
+
+        int L[] = new int[n1];
+        int R[] = new int[n2];
+
+
+        for (int i = 0; i < n1; ++i)
+            L[i] = array[l + i];
+        for (int j = 0; j < n2; ++j)
+            R[j] = array[m + 1 + j];
+
+        int i = 0, j = 0;
+
+        int k = l;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                array[k] = L[i];
+                i++;
+            } else {
+                array[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+        while (i < n1) {
+            array[k] = L[i];
+            i++;
+            k++;
+        }
+        while (j < n2) {
+            array[k] = R[j];
+            j++;
+            k++;
+        }
 
         return list;
     }
 
     public int[] mergeSort(int[] array) {
+
         int[] list = array;
         //implement here
+        if (l < r) {
+            int m = (l + r) / 2;
+            mergeSort(array, l, m);
+            mergeSort(array, m + 1, r);
+            merge(array, l, m, r);
+        }
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
 
-        return list;
-    }
+        int temp = array[i + 1];
+        array[i + 1] = array[high];
+        array[high] = temp;
+        return i + 1;
+
+ }
 
     public int[] quickSort(int[] array) {
         int[] list = array;
-        //implement here
 
+        //implemented here
+
+        if (low < high)
+        {
+            int pi = quick(array, low, high);
+            quickSort(array, low, pi-1);
+            quickSort(array, pi+1, high);
+        }
+        return list;
+    }
+    void heap(int array[], int n, int i){
+    {
+        int largest = i;
+        int l = 2*i + 1;
+        int r = 2*i + 2;
+
+
+        if (l < n && array[l] > array[largest])
+            largest = l;
+
+        // If right child is larger than largest so far
+        if (r < n && array[r] > array[largest])
+            largest = r;
+
+
+        if (largest != i)
+        {
+            int swap = array[i];
+            array[i] = array[largest];
+            array[largest] = swap;
+
+            // Recursively heapify the affected sub-tree
+            heap(array, n, largest);
+        }
+    }        return list;
+        }
+
+        int quick(int array[], int low, int high)
+        {
+        int pivot = array[high];
+        int i = (low-1); // index of smaller element
+        for (int j=low; j<high; j++)
+        {
+        if (array[j] <= pivot) {
+        i++;
         return list;
     }
 
     public int[] heapSort(int[] array) {
         int[] list = array;
-        //implement here
 
+        //implemented here
+        int n = array.length;
+        for (int i = n / 2 - 1; i >= 0; i--)
+            heap(array, n, i);
+        for (int i = n - 1; i >= 0; i--) {
+            int temp = array[0];
+            array[0] = array[i];
+            array[i] = temp;
+            heap(array, i, 0);
+        }
         return list;
     }
 
-    public int[] bucketSort(int[] array) {
-        int[] list = array;
-        //implement here
 
+   // public int[] bucketSort(int[] array) {
+        int[] list = array;
+
+
+        //implemented here
+
+        public int[] bucketSort ( int[] arrays, int max_value){
+
+            int[] Bucket = new int[max_value + 1];
+            int[] sorted_nums = new int[arrays.length];
+            for (int i = 0; i < arrays.length; i++)
+                Bucket[arrays[i]]++;
+            int outPos = 0;
+            for (int i = 0; i < Bucket.length; i++)
+                for (int j = 0; j < Bucket[i]; j++)
+                    sorted_nums[outPos++] = i;
+            return sorted_nums;
+        }
+
+        public int max_value ( int[] nums)
+        int max_value = 0;
+        for (int i = 0; i < nums.length; i++)
+            if (nums[i] > max_value)
+                max_value = nums[i];
+        return max_value;
+    }
         return list;
     }
 
     public int[] shellSort(int[] array) {
         int[] list = array;
-        //implement here
+
+         //implemented here
+        int n = array.length;
+        for (int gap = n / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < n; i += 1) {
+                int temp = array[i];
+                int j;
+                for (j = i; j >= gap && array[j - gap] > temp; j -= gap)
+                    array[j] = array[j - gap];
+                array[j] = temp;
+            }
+        }
 
         return list;
     }
+
+    public static void printSortedArray ( int[] array){
+
+
+        for(int i=0;i<array.length;i++){
+        System.out.println(array[i]);
+        }
+        }
 }
+        return list;
+
+

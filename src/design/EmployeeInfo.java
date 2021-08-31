@@ -75,6 +75,12 @@ public class EmployeeInfo {
         return total;
     }
 
+    public void assignDepartment(String s) {
+    }
+
+    public void setSalary(int i) {
+    }
+
     private static class DateConversion {
 
         public DateConversion(Months months) {
