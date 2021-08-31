@@ -61,6 +61,7 @@ ArrayList<Integer> alist1=new ArrayList<Integer>();
         System.out.println();
 
         //Retrieve with For each loop
+
         System.out.println("Retrieve with For each loop");
         for(Integer str:alist1)
         System.out.print(str+" , ");
@@ -70,9 +71,13 @@ ArrayList<Integer> alist1=new ArrayList<Integer>();
         alist2=alist1;
 
         //Connect to MySql Database
+
+
         ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
         //Create table, Insert and Read data from database
+
+
         connectToSqlDB.insertDataFromArrayListToSqlTable(alist2,"tbl_arrayList", "column_lowestNumber");
         List<String> numbers = connectToSqlDB.readDataBase("tbl_arrayList", "column_lowestNumber");
         for(String st:numbers){

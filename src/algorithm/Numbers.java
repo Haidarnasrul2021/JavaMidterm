@@ -72,8 +72,10 @@ public class Numbers {
 
     public static void randomize(int[] arr, int n) {
         Random r = new Random();
+
         // Start from the last element and swap one by one. We don't
         // need to run for the first element that's why i > 0
+
         for (int i = n - 1; i > 0; i--) {
             int j = r.nextInt(i);
             int temp = arr[i];
