@@ -20,6 +20,8 @@ public class FortuneEmployee {
      * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
      *
      **/
+    //
+
     public static void main(String[] args) throws Exception, NullPointerException{
 
         String mission = "We want to maintain 15% yearly growth of the company.";

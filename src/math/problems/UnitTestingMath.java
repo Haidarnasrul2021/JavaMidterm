@@ -3,14 +3,16 @@ package math.problems;
 public class UnitTestingMath {
 
     public static void main(String[] args) {
+
+    }
         // Apply unit testing from each class contained within this package, here.
 
     }
 }
-      try {
-          int[] array1 = { 5, 50, 500};
-          int[] array2 = {100, 200, 48};Assert.assertEquals(FindLowestDifference.findSmallestDifference(array1,array2,3,3),2);System.out.println("Unit testing passed for FindLowestDifference");
-           }catch (AssertionError as){
+      try{
+        int[]array1={5,50,500};
+        int[]array2={100,200,48};Assert.assertEquals(FindLowestDifference.findSmallestDifference(array1,array2,3,3),2);System.out.println("Unit testing passed for FindLowestDifference");
+        }catch (AssertionError as){
           System.out.println("Unit testing failed for FindLowestDifference");
               }
 
@@ -95,6 +97,7 @@ public class UnitTestingMath {
         }
 
         //Unit testing for pattern
+
         try {
             int n = 3;
             ArrayList<Integer> expectedArray = new ArrayList<>(Arrays.asList(10,9,8));
@@ -105,4 +108,3 @@ public class UnitTestingMath {
         }
 
     }
-}

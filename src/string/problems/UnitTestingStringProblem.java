@@ -4,36 +4,45 @@ public class UnitTestingStringProblem {
 
     public static void main(String[] args) {
         // Unit testing for all classes within this package should be implemented here
-    }
-}
-    String str = "ABCD";
-    int n = str.length();
-        System.out.println("Permutations of ABC are: ");
-                Permutation permutation = new Permutation();
-                permutation.permute(str, 0, n-1);
 
+package string.problems;
+
+import org.testng.Assert;
+
+import static org.testng.AssertJUnit.assertEquals;
+
+        public class UnitTestingStringProblem {
+            public static void main(String[] args) throws java.lang.AssertionError{
+
+            }
+                //Apply Unit Test into all the methods in this package.
+
+
+                //Unit test for the Longest word
+                try {
+                    String str1 = "LIFE IS BEAUTIFUL";
+                    Assert.assertEquals(DetermineLargestWord.longestWord(str1),"BEAUTIFUL");
+                    System.out.println("Determine largest value unit test Passed.");
+                }catch (AssertionError as){
+                    System.out.println("Determine largest value unit test Failed");
                 }
-private void permute(String str, int l, int r)
-        {
-        if (l == r)
-        System.out.println(str);
-        else
-        {
-        for (int i = l; i <= r; i++)
-        {
-        str = swap(str,l,i);
-        permute(str, l+1, r);
-        str = swap(str,l,i);
-        }
-        }
-        }
 
-public String swap(String a, int i, int j)
-        {
-        char temp;
-        char[] charArray = a.toCharArray();
-        temp = charArray[i] ;
-        charArray[i] = charArray[j];
-        charArray[j] = temp;
-        return String.valueOf(charArray);
+                //Unit test for Anangram Problem
+                try {
+                    Assert.assertEquals(Anagram.checkAnagram("CAMEL","MALEC"),true);
+                    System.out.println("Anagram unit test Passed.");
+                }catch (AssertionError as){
+                    System.out.println("Anagram unit test is failed");
+                }
+
+                //unit testing for palindrome
+                try {//Unit test for palindrome
+                    String str2 = "WOW";
+                    boolean expected = true;
+                    Assert.assertEquals(Palindrome.palindromeChecking(str2),expected);
+                    System.out.println("Palindrome unit test passed.");
+                } catch (AssertionError as){
+                    System.out.println("Palindrome unit test failed.");
+                }
+            }
         }

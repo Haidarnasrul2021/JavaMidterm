@@ -3,7 +3,8 @@
 Please answer the below core-java Questions:
 
 What is programing language?
-A. programming language is a special language, used by programmers to develop
+
+A. "programming language" is a special language, used by programmers to develop
           software programs, scripts, or other sets of instructions for computers to execute.
 What jdk contains or composed of and define each components?
 A.Components of JDK:
@@ -20,12 +21,16 @@ A.Components of JDK:
           6. The Header and Stub File Generator: Generates  header and source files that are needed to
              implement native methods.
           7. The Documentation Generator: Generates HTML pages of API documentation from Java source files.
+
 What is IDE?
-A.An IDE stands as Integrated Development Environment, is a software suite that consolidates the
+
+A.An "IDE" stands as Integrated Development Environment, is a software suite that consolidates the
           basic tools developers need to write and test software. Typically, an IDE contains a code editor, a
           compiler or interpreter and a debugger that the developer accesses through a single graphical user
-          interface (GUI).
+          interface (GUI)
+          .
 What are the IDEs available in the market to support java?
+
 A.Netbeans,Eclipse,Intellij,Android Studio,Enide Studio,Bluej,jEdit,jGrasp,Jsource,JDeveloper,Drjava etc.
 Explain the entire java life cycle.
 A.Programmer use any text editor to create high level Java text file.This file is saved as a
@@ -35,23 +40,30 @@ A.Programmer use any text editor to create high level Java text file.This file i
         the bytecodes are valid and not hostile. Finally, the JVM reads the bytecodes in memory and
         translates them into machine code.
 what is class?
-A.Class is a blueprint from which individual objects are created.
+A."Class" is a blueprint from which individual objects are created.
         Classes have data and methods, data represents state and methods behavior. Class is just a logical framework.
         So, a class is a template for an object and object is an instance of a class
 What is object?
 A.Object is an instance of the class and Object is the physical reality.
 What is the entry point of an application?
+
 A. Main method is the entry point of an application.
+
 Why main is static?
+
 A.In order to call a method need to have a object of that method. As main method
         is gateway to the java application JVM need to enter into main method in order
         to execute. Static key word let JVM to call main method without  object.
+
 Which class is the superclass of all classes?
+
 A. java.lang.object is a superclass of all class. The Object class defined in the java.lang package
         is called as the superclass for each and every class in Java. The object class is the superclass
         for every class as Java is completely object oriented.
+
 What is difference between path and classpath variables?
-A. The main difference between PATH and CLASSPATH is that PATH is an environment variable which is used to
+
+A. The main difference between "PATH" and "CLASSPATH" is that PATH is an environment variable which is used to
         locate JDK binaries like "java" or "javac" command used to run java program and compile java source file.
         PATH is nothing but setting up an environment for operating system & Classpath is an environment variable
         which is used by the Java compiler to find the path.
@@ -145,14 +157,14 @@ Final:
   Called by the garbage collector on an object when garbage collection determines that there are no more
   references to the object.
 What is a constructor ?
-Answer: Constructor is being used to instantiate a object by using new operator. It is an instance method with
+Answer: "Constructor"is being used to instantiate a object by using new operator. It is an instance method with
         the same name of their class.
 Can we have multiple constructors in a class?
 Answer: Yes.
 If we don't have a constructor declared, what is called during the object creation?
 Answer: create an object from a class.
 What is "this" keyword in java ?
-Answer: this key word represents instance of the class. this can be used to access class methods and variables.
+Answer: "this" key word represents instance of the class. this can be used to access class methods and variables.
 What is "super" keyword in java? How many possible way can you use?
 Answer: super key word used for accessing the members of the super class by the extended class.
 What is JVM stand for ?
@@ -196,26 +208,38 @@ Answer: String is immutable, if you try to alter their values, another object ge
         StringBuffer and StringBuilder are mutable so they can change their values.StringBuffer methods are
         synchronized while StringBuilder methods are non-synchronized, it means that for thread-safe operations
         you must choose StringBuffer class instead of StringBuilder.
+
 What is Singleton class?
+
 Answer: The purpose of singleton is to control object creation by keeping private constructor. Singleton
         pattern helps us to keep only one instance of a class at any time.We can make constructor as private.
         So that user can not create an object from outside of the class.
+
 What is Serialization and Deserialization?
+
 Answer: Serialization: It is a process of converting an object into a sequence of bytes which can be persisted
         to a disk or database or can be sent through streams.
         Deserialization: The reverse process of creating object from sequence
         of bytes is called deserialization.
+
 when to use transient variable in java?
+
 Answer: If user wants to skip any variable from Serialization and Deserialization on that time we can use
         transient variable.
+
 Difference between while and do..while loop?
+
 Answer: Only difference between these two loops is that, in while loops, test expression is checked at first but,
         in do...while loop code is executed at first then the condition is checked. So, the code are executed at least
         once in do...while loops.
+
 What is Enum?
-Answer: Enum is a special Java type used to define collections of constants.
+
+Answer: "Enum"is a special Java type used to define collections of constants.
+
 What is Iterator?
-Answer: An iterator is an Interface. Iterator takes the place of Enumeration in the Java Collections Framework.
+
+Answer: An "iterator" is an Interface. Iterator takes the place of Enumeration in the Java Collections Framework.
 Which one will take more memory, an int or Integer?
 Answer: An int shall take 4 bytes and Integer shall take about 16 bytes space in heap.Integer are wrapper class which
         has more overhead compared to primitive type. The memory space consumption by object depends upon JVM during run time
@@ -295,25 +319,34 @@ A. Heap and Stack are part of JVM but they are used for different purposes.
 5. Order: Heap is a large memory area where objects can be created and stored in any order but Stack memory
    is structured as Stack data structure i.e. LIFO where method calls are stored as last in first out order.
 6. Error Type: When heap and stack memory are filled different error are being generated.
+
 What is reflection in java and why is it useful?
+
 Answer: Reflection is a feature in the Java programming language. It allows an executing Java program to
         examine or "introspect" upon itself, and manipulate internal properties of the program.
         Java Reflection is quite powerful and can be very useful. Java Reflection makes it possible to inspect
         classes, interfaces, fields and methods at runtime, without knowing the names of the classes, methods etc.
+
 what is multithreading in java?
+
 Answer: Multithreading in java is a process of executing multiple threads simultaneously. A thread is a lightweight
         sub-process, the smallest unit of processing. Multiprocessing and multithreading, both are used to
         achieve multitasking.
+
 What is the use of synchronization in Java?
+
 Answer: Synchronized keyword in Java is used to provide mutually exclusive access to a shared resource with
         multiple threads in Java. Synchronization in Java guarantees that no two threads can execute a synchronized
         method which requires the same lock simultaneously or concurrently.
 What is Framework?
 Answer: Frameworks are large bodies (usually many classes) of prewritten code to which you add your own code to
         solve a problem in a specific domain.
+
 What are the testing Framework available in java?
 Answer: JUnit, TestNG  etc.
+
 Difference between jUnit and testNG?
+
 Answer: Major difference in TestNG and JUnit test frameworks is their scope. TestNG is more advance in parameterize
         testing, dependency testing and suite testing (Grouping concept). TestNG is meant for high-level testing and
         complex integration test.
@@ -321,13 +354,17 @@ What are the dependencies for this project?
 Answer: 1. mongo-java-driver-3.4.0
         2. mysql-connector-java-5.1.41-bin.jar
         3.testng-6.8.7.jar
+
 what is dependency injection in java?
+
 Answer: The general concept behind dependency injection is called Inversion of Control. According to this concept a
         class should not configure its dependencies statically but should be configured from the outside.
         A Java class has a dependency on another class, if it uses an instance of this class. We call
         this a _class dependency. For example, a class which accesses a logger service has a dependency
         on this service class.
+
 What is static binding and dynamic binding?
+
 Answer: Static binding in Java occurs during compile time while dynamic binding occurs during runtime. private , final
         and static methods and variables use static binding and are bonded by compiler while virtual methods are bonded
         during runtime based upon runtime object.

@@ -6,13 +6,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class UnitTestConnectDB {
-
-    public static void main(String[] args) {
-        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
-
-    }
-}
-public class UnitTestConnectDB {
     @Test
     public void connectionTest() {
 

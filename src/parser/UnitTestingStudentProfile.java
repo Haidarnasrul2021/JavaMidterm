@@ -3,13 +3,6 @@ package parser;
 import org.testng.Assert;
 
 public class UnitTestingStudentProfile {
-
-    public static void main(String[] args) {
-        // Implement unit tests for all user-defined methods in this package, here.
-
-    }
-}
-public class UnitTestingStudentProfile {
     public static void main(String[] args) {
         //Apply Unit Test into all the methods in this package.
 

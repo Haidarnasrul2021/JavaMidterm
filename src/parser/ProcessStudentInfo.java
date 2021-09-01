@@ -12,7 +12,6 @@ import org.xml.sax.SAXException;
 
 
 public class ProcessStudentInfo {
-
     /*
      * Under XmlReader class, the parseData() will return list of Student Info which will contain Student first name, last name and score.
      * You need to implement the method name "convertIntToChar()" which will convert String score into char Grade.('A'for 90 to 100,'B'for 80 to 89 and
@@ -35,43 +34,80 @@ public class ProcessStudentInfo {
      *
      */
 
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-        // Path of XML data to be read.
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, Exception {
+        //Path of XML data to be read.
         String pathSelenium = System.getProperty("user.dir") + "/src/parser/selenium.xml";
         String pathQtp = System.getProperty("user.dir") + "/src/parser/qtp.xml";
         String tag = "id";
 
         //Declare a Map with List<String> into it.
         Map<String, List<Student>> list = new LinkedHashMap<String, List<Student>>();
-				
-        /*
-        Declare 2 ArrayList, accepting Student datatype, which you will use to store students from the Selenium class
-            into one list, and students from the QTP class into another list
-        */
+
+				/*Declare 2 ArrayList with Student data type to store Selenium student into one of the ArrayList and
+				  Qtp student into another ArrayList. */
+
         List<Student> seleniumStudents = new ArrayList<Student>();
         List<Student> qtpStudents = new ArrayList<Student>();
 
-        // Create XMLReader object.
+        //Create XMLReader object.
         XmlReader xmlReader = new XmlReader();
 
-        // Parse Data using parseData method and then store data into Selenium ArrayList.
+
+        //Parse Data using parseData method and then store data into Selenium ArrayList.
         seleniumStudents = xmlReader.parseData(tag, pathSelenium);
 
-        // Parse Data using parseData method and then store data into QTP ArrayList.
+        //Parse Data using parseData method and then store data into Qtp ArrayList.
+        qtpStudents = xmlReader.parseData(tag, pathQtp);
 
-        // Add Selenium ArrayList data into map.
+        //add Selenium ArrayList data into map.
+        list.put("sel", seleniumStudents);
+        //add Qtp ArrayList data into map.
+        list.put("qtp", qtpStudents);
 
-        // Add Qtp ArrayList data into map.
-
-        // Retrieve map data and display output for both maps.
-
-
-
-        List<Student> stList = new ArrayList<>();
-        for (Student st : stList) {
-            System.out.println(st.getFirstName() + " " + st.getLastName() + " " + st.getScore() + " " + st.getId());
+        //Retrieve map data and display output.
+        Iterator itr = list.keySet().iterator();
+        while (itr.hasNext()) {
+            List st = list.get(itr.next());
+            for (Object str : st) {
+                System.out.println(str);
+            }
         }
 
-    }
 
+
+        //Connect to MySQL database
+        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+
+        //Create tables in database
+        connectToSqlDB.createTableFromStringToMySql("tbl_Qtp", "mapKey", "mapValue");
+        connectToSqlDB.createTableFromStringToMySql("tbl_Selenium", "mapKey", "mapValue");
+        //Store Selenium data into Selenium table in Database
+        //Store Qtp data into Qtp table in Database
+        for (Object str : list.keySet()) {
+            for (Object str1 : list.get(str)) {
+                List<String> list1 = new ArrayList<String>();
+                list1.add(str.toString());
+                list1.add(str1.toString());
+
+                if (str.equals("sel")) {
+                    connectToSqlDB.InsertDataFromArrayListToMySql(list1, "tbl_Selenium", "mapKey", "mapValue");
+                } else {
+                    connectToSqlDB.InsertDataFromArrayListToMySql(list1, "tbl_Qtp", "mapKey", "mapValue");
+                }
+            }
+        }
+
+        //Retrieve Selenium and Qtp students from Database
+
+        List<String> numbers = connectToSqlDB.readDataBase("tbl_Selenium", "mapKey", "mapValue");
+        for (String st : numbers) {
+            System.out.println(st);
+
+        }
+
+        List<String> numbers1 = connectToSqlDB.readDataBase("tbl_Qtp", "mapKey", "mapValue");
+        for (String st : numbers1) {
+            System.out.println(st);
+        }
+    }
 }

@@ -151,9 +151,9 @@ public class Sort {
             largest = l;
 
         // If right child is larger than largest so far
+
         if (r < n && array[r] > array[largest])
             largest = r;
-
 
         if (largest != i)
         {
@@ -214,7 +214,8 @@ public class Sort {
             return sorted_nums;
         }
 
-        public int max_value ( int[] nums)
+      //
+            public int max_value ( int[] nums)
         int max_value = 0;
         for (int i = 0; i < nums.length; i++)
             if (nums[i] > max_value)
