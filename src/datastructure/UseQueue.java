@@ -14,7 +14,6 @@ public class UseQueue {
          */
 
     }
-
 }
 
     Queue<String> q = new LinkedList<String>();

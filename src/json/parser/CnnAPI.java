@@ -115,8 +115,7 @@ public class CnnAPI {
 
                 String a = jsonobject.get("author").toString();
                 System.out.print(a);
-                listofa.add(a);
-                String t = jsonobject.get("title").toString();
+                listofa.add(a);String t = jsonobject.get("title").toString();
                 System.out.print(t);
                 listoft.add(t);
                 String des = jsonobject.get("description").toString();

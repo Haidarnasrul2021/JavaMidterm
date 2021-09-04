@@ -6,6 +6,7 @@ What is programing language?
 
 A. "programming language" is a special language, used by programmers to develop
           software programs, scripts, or other sets of instructions for computers to execute.
+
 What jdk contains or composed of and define each components?
 A.Components of JDK:
           1. The Runtime Interpreter: The Java runtime interpreter (java) is a stand-alone version of the
@@ -67,7 +68,9 @@ A. The main difference between "PATH" and "CLASSPATH" is that PATH is an environ
         locate JDK binaries like "java" or "javac" command used to run java program and compile java source file.
         PATH is nothing but setting up an environment for operating system & Classpath is an environment variable
         which is used by the Java compiler to find the path.
+
 What is the difference between an Interface and Abstract class?
+
 A.  A class that contains one or more abstract methods , and therefore can never
        be instantiated. Abstract classes are defined so that other classes can
        extend them and make them concrete by implementing the abstract methods.
@@ -82,9 +85,13 @@ A. No we can not create object in Interface and Abstract class.
         and can create more new methods as required keeping at least one abstract method.
         later abstract class can be extended and create and concrete class where there will be no
         abstract methods.
+
 what is Access Specifier?
+
 A. Access Specifier is to determine the visibility of methods and variables.
+
 What is OOP ? Define each feature of java OOP.
+
 A. OOP. Stands for "Object-Oriented Programming." Refers to a programming methodology based on
   objects, instead of just functions and procedures. These objects are organized into classes,
   which allow individual objects to be group together.
@@ -122,7 +129,9 @@ A. OOP. Stands for "Object-Oriented Programming." Refers to a programming method
   interface and abstract class in Java. An interface or abstract class is something which is not
   concrete , something which is incomplete. In order to use interface or abstract class, we need
   to extend and implement an abstract method with concrete behavior.
+
 What is Java Package and which package is imported by default?
+
 A. A package is a namespace that organizes a set of related classes and interfaces.
         java.lang package is imported by default, no need to explicitly import it. Classes in the java.lang package
         do not need to be imported (the compiler acts like they are always imported).
@@ -132,7 +141,9 @@ A. An application program interface (API) is a set of routines, protocols, and t
         Additionally, APIs are used when programming graphical user interface (GUI) components. A
         good API makes it easier to develop a program by providing all the building blocks. A programmer
         then puts the blocks together.
+
 Does java support multiple inheritance, explain why or why not?
+
 A. java doesn't allow multiple inheritance to avoid the ambiguity caused by it.
 What is method overloading and when it happens?
 A. Same method in one class but different parameters. It happens when we change the signature of the a particular method.
@@ -140,12 +151,17 @@ Explain exceptions in java and how to handle it.
 A. It is an event which occurs during the execution of a program which disrupts the program's instructions. It is
 handled by try and catch block, finally keyword, or by throwing exceptions.
 What is static keyword in java? How it has been used in variables and methods ?
+
 A. Static keyword that are used for share the same variable or method of a given class.
 we can use static method and variable by direct call and by class name.
+
 What is final and how it has been used variables and methods?
+
 A. the final keyword indicates that a member cannot be changed once declared. a final variabe cannot be changed
 and a final method cannot be overridden
+
 What is final, finally and finalize?
+
 Final:
   Final variables are nothing but constants. We cannot change the value of a final variable once it is
   initialized. A final method cannot be overridden. Which means even though a sub class can call the
@@ -156,54 +172,79 @@ Final:
   Finalize():
   Called by the garbage collector on an object when garbage collection determines that there are no more
   references to the object.
+
 What is a constructor ?
+
 Answer: "Constructor"is being used to instantiate a object by using new operator. It is an instance method with
         the same name of their class.
+
 Can we have multiple constructors in a class?
+
 Answer: Yes.
 If we don't have a constructor declared, what is called during the object creation?
 Answer: create an object from a class.
+
 What is "this" keyword in java ?
+
 Answer: "this" key word represents instance of the class. this can be used to access class methods and variables.
+
 What is "super" keyword in java? How many possible way can you use?
+
 Answer: super key word used for accessing the members of the super class by the extended class.
+
 What is JVM stand for ?
+
 Answer: Java Virtual Machine
+
 Is JVM platform independent?
 Answer: The JVM must be platform dependent to allow your Java to run on the specific platform. A JVM for Windows will
         translate your Java into different system calls than a JVM for OS X. No, JVMs are not platform independent.
         In fact they are platform specific run time environment provided by the vendor.
 What version of java are you using?
-java version "11.0.1" 2018-10-16 LTS
+java version "11.0.12" .
 Java(TM) SE Runtime Environment 18.9 (build 11.0.1+13-LTS)
 Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.1+13-LTS, mixed mode)
+
 What is JAR stand for ?
+
 Answer: Java Archive is a platform independent file format that holds many files into one.
   Multiple applets written in the Java Programming language and their components
   like .class files, images, sounds and other resource files can be bundled in a JAR file and
   downloadable in a single HTTP transaction. It supports file compression and digital signatures.
+
 What is the difference between JDK and JVM?
+
 Answer: JDK is an acronym for Java Development Kit.It physically exists.It contains JRE + development tools.
         JVM (Java Virtual Machine) is an abstract machine. It is a specification that provides runtime environment in
         which java bytecode can be executed.
+
 What is the difference between JVM and JRE?
+
 Answer: JVM (Java Virtual Machine) is an abstract machine. It is a specification that provides runtime environment in
         which java bytecode can be executed.
         JRE is an acronym for Java Runtime Environment.It is used to provide runtime environment.It is the
         implementation of JVM.It physically exists.It contains set of libraries + other files that JVM uses at runtime.
+
 What is compile time and run time?
+
 Answer: Java compile the .java file to .class file, this stage is called compile time.
         java loader loads the .class file in JVM and JVM executes the application.
         This execution time of a application is called run time.
+
 What is heap?
+
 Answer: The heap is the run-time data area from which memory for all class instances and arrays is allocated.
         Heap is the place where all objects stays during run time. It is part of RAM.
+
 How java manage it's memory?
+
 Answer: All the primitive variables and reference variable stays in stack. Heap contains the objects.
         Main methods executes on stack. during the process of execution when a object lost his reference variable
         which is being erased from the stack after completion of execution is waits for the Java automatic garbage
         collector, and object without no reference variable being removed from heap by garbage collector.
+
 What is the difference between String, StringBuffer and StringBuilder?
+
 Answer: String is immutable, if you try to alter their values, another object getscreated, whereas
         StringBuffer and StringBuilder are mutable so they can change their values.StringBuffer methods are
         synchronized while StringBuilder methods are non-synchronized, it means that for thread-safe operations
@@ -240,11 +281,15 @@ Answer: "Enum"is a special Java type used to define collections of constants.
 What is Iterator?
 
 Answer: An "iterator" is an Interface. Iterator takes the place of Enumeration in the Java Collections Framework.
+
 Which one will take more memory, an int or Integer?
+
 Answer: An int shall take 4 bytes and Integer shall take about 16 bytes space in heap.Integer are wrapper class which
         has more overhead compared to primitive type. The memory space consumption by object depends upon JVM during run time
         environment. For a object this space varies.
+
 Why is String Immutable in Java?
+
 Answer:  Security: parameters are typically represented as String in network connections, database connection urls,
          usernames/passwords etc. If it were mutable, these parameters could be easily changed.
          Synchronization and concurrency: making String immutable automatically makes them thread safe thereby
@@ -254,19 +299,25 @@ Answer:  Security: parameters are typically represented as String in network con
           point to the same object).
          Class loading: String is used as arguments for class loading. If mutable, it could result in wrong class
          being loaded (because mutable objects change their state).
+
 What is constructor chaining in Java?
+
 Answer: Constructor chaining is the process of calling one constructor from another constructor with respect to current object.
         Constructor chaining can be done in two ways:
         Within same class: It can be done using this() keyword for constructors in same class
         From base class: by using super() keyword to call constructor from the base class.
         Constructor chaining occurs through inheritance.
+
 The difference between Serial and Parallel Garbage Collector?
+
 Answer: The serial collector uses a single thread to perform all garbage collection work, which is more efficient
   because of no communication overhead between threads. It is best suited to single processor machines.
   Parallel collctor performs minor collections in parallel, which can significantly reduce garbage collection.
     It is intended for applications with medium-size to large sized data sets that are run on multiprocessor and multi
     threaded hardware.
+
 What is JIT stands for?
+
 Answer: The Just-In-Time (JIT) compiler is a component of the Java™ Runtime Environment that improves the
  performance of Java applications at run time.
  The JIT compiler helps improve the performance of Java programs by compiling bytecodes into native machine
@@ -297,6 +348,7 @@ Answer:
    from any reference of any other live object in the running program.
 
 Can you guarantee the garbage collection process?
+
 Answer:No it is not guaranteed process. Reason is as follows~
    Being an automatic process, programmers need not initiate the garbage collection process explicitly in the code.
    System.gc() and Runtime.gc() are hooks to request the JVM to initiate the garbage collection process.
@@ -308,6 +360,7 @@ Answer:No it is not guaranteed process. Reason is as follows~
    Undoubtedly we know that the garbage collection process cannot be forced.
 
 What is the difference between stack and heap in Java?
+
 A. Heap and Stack are part of JVM but they are used for different purposes.
    Differences are as follows:
 1. Size: Heap space in Java is much bigger than the Stack memory.
@@ -338,6 +391,7 @@ What is the use of synchronization in Java?
 Answer: Synchronized keyword in Java is used to provide mutually exclusive access to a shared resource with
         multiple threads in Java. Synchronization in Java guarantees that no two threads can execute a synchronized
         method which requires the same lock simultaneously or concurrently.
+
 What is Framework?
 Answer: Frameworks are large bodies (usually many classes) of prewritten code to which you add your own code to
         solve a problem in a specific domain.

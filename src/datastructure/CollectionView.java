@@ -27,7 +27,7 @@ public class CollectionView {
             for(Map.Entry<Integer,String> colView: map.entrySet()){
                 System.out.println(colView);
             }
-        }
+         }
         }
 
 

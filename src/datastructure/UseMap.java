@@ -2,22 +2,16 @@ package datastructure;
 
 public class UseMap {
 
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws java.lang.Exception {
         /*
          * Demonstrate how to use Map that includes storing and retrieving elements.
          * Add List<String> into a Map. Like, Map<String, List<string>> list = new HashMap<String, List<String>>();
-         * Use For-Each loop and While-loop with Iterator to retrieve data.
+         * Use For Each loop and while loop with Iterator to retrieve data.
          *
-         * Store and retrieve data from/to a database table.
+         * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
          */
-
-    }
-
-}
-		 *
-                 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
-                 */
-                 Map<Integer, String> state = new HashMap<Integer, String>();
+        Map<Integer, String> state = new HashMap<Integer, String>();
         //Storing values to Map by put() method
         state.put(1, "NY");
         state.put(2, "TX");
@@ -55,14 +49,14 @@ public class UseMap {
         System.out.println("Retrieve with while loop and iterator");
         Iterator<Map.Entry<String, List<String>>> it = b.entrySet().iterator();
         while (it.hasNext()) {
-        Map.Entry<String, List<String>> x = it.next();
-        System.out.println(x.getKey() + " " + x.getValue());
+            Map.Entry<String, List<String>> x = it.next();
+            System.out.println(x.getKey() + " " + x.getValue());
         }
 
         //Retrieve with For each Loop
         System.out.println("Retrieve with For each Loop");
         for (Map.Entry entry : b.entrySet()) {
-        System.out.println(entry.getKey() + " " + entry.getValue());
+            System.out.println(entry.getKey() + " " + entry.getValue());
         }
 
         //Connect to Database
@@ -71,13 +65,13 @@ public class UseMap {
         //Creating table, inserting data and read values
         connectToSqlDB.createTableFromStringToMySql("tbl_map", "mapKey", "mapValue");
         for (Object str : b.keySet()) {
-        for (String str1 : b.get(str)) {
-        List<String> list1 = new ArrayList<String>();
-        list1.add(str.toString()); // adds key
-        list1.add(str1); // adds value
-        // Insert data in the database
-        connectToSqlDB.InsertDataFromArrayListToMySql(list1, "tbl_map", "mapKey", "mapValue");
-        }
+            for (String str1 : b.get(str)) {
+                List<String> list1 = new ArrayList<String>();
+                list1.add(str.toString()); // adds key
+                list1.add(str1); // adds value
+                // Insert data in the database
+                connectToSqlDB.InsertDataFromArrayListToMySql(list1, "tbl_map", "mapKey", "mapValue");
+            }
         }
 
         //System.out.println("Reading data from database: ");
@@ -87,5 +81,5 @@ public class UseMap {
         for (String st : numbers) {
             System.out.println(st);
         }
-
-
+    }
+}

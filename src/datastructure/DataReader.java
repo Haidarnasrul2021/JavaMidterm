@@ -71,6 +71,7 @@ public class DataReader {
         }
         }
         //Retrieving and Printing from Database
+
         List<String> readText = connectToSqlDB.readDataBase("tbl_selfDrivingCar", "data_values");
         System.out.println("Retrieving and Printing from Database");
         for(String st:readText){
@@ -93,6 +94,7 @@ public class DataReader {
 
         //Demonstrating push,peek,search,pop element for stack
         //peek()method returns the element at the top of the Stack
+
         System.out.println("Peeking stack: "+ newStack.peek());
 
         //search() method returns the position of the element if it is successfully found in the stack
@@ -121,6 +123,7 @@ public class DataReader {
         }
 
         //Retrieving data using iterator
+
         System.out.println("Retrieving data from LinkedList using iterator: ");
         Iterator itOb = newLinkedList.iterator();
         while(itOb.hasNext()) {

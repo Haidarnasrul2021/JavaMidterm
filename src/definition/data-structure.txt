@@ -80,6 +80,7 @@ what is the best case to search an element from an array?
 Answer: Best case - you find it (assuming you only need to find one) on the first comparison.
 
 what is the worst case to search an element from an array?
+
 Answer: Assuming there are no duplicates for the expected value and it is the last
 one in the array - the nth comparison.
 
@@ -115,6 +116,7 @@ Answer: The major data structures used are as follows:
 3. Hierarchical data model - Trees
 
 How HashMap works in java?
+
 Answer: A HashMap element has key and value in Java, elements are stored against
 a key. Map Interface implemented on HashMap in Java Collection Framework.
 elements manipulation is easy on the basis of key of the value.

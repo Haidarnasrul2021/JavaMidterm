@@ -18,7 +18,6 @@ public class Numbers {
      */
 
     public static void main(String[] args) throws Exception {
-
         ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
         int[] num = new int[1000000];
@@ -36,6 +35,7 @@ public class Numbers {
         printValue(numbers);
 
         int n = num.length;
+
         randomize(num, n);
 
         // Insertion Sort

@@ -9,12 +9,10 @@ public class Sort {
      */
 
     public static void printSortedArray(int[] array) {
-
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+        for(int i = 0; i < array.length; i++) {
+         System.out.println(array[i]);
         }
     }
-
     public int[] selectionSort(int[] array) {
         final long startTime = System.currentTimeMillis();
         int[] list = array;
@@ -25,7 +23,6 @@ public class Sort {
                 if (array[i] < array[min])
                     min = i;
             }
-
             int temp = array[min];
             array[min] = array[j];
             array[j] = temp;
@@ -40,19 +37,35 @@ public class Sort {
     public int[] insertionSort(int[] array) {
         final long startTime = System.currentTimeMillis();
         int[] list = array;
-        //implement here
 
+        //implemented here
         final long endTime = System.currentTimeMillis();
         final long executionTime = endTime - startTime;
         this.executionTime = executionTime;
         return list;
     }
 
-    public int[] bubbleSort(int[] array) {
+    public int[]bubbleSort(int[] array) {
+        final long startTime = System.currentTimeMillis();
+        final long executionTime = endTime - startTime;
         int[] list = array;
 
 
         //implemented here
+        return list;
+    }
+    public int[] meagesort(int[] array) {
+        final long startTime = System.currentTimeMillis();
+        final long executionTime = endTime - startTime;
+        int[] list = array;
+
+        //implemented here
+        return list;
+    }
+      public int[]quicksort(int[] array) {
+        final long startTime = system.currentTimeMillis();
+        final long executionTime = endTime - startTime;
+        int[] list = arry;
 
         int n = array.length;
         for (int i = 0; i < n - 1; i++)
@@ -107,7 +120,8 @@ public class Sort {
     }
 
     public int[] mergeSort(int[] array) {
-
+        final long startTime = system.currentTimeMillis();
+        final long executionTime = endTime - startTime;
         int[] list = array;
         //implement here
         if (l < r) {
@@ -128,6 +142,7 @@ public class Sort {
  }
 
     public int[] quickSort(int[] array) {
+        final long startTime = system.currentTimeMillis();
         int[] list = array;
 
         //implemented here
@@ -177,8 +192,9 @@ public class Sort {
         i++;
         return list;
     }
-
-    public int[] heapSort(int[] array) {
+        public int[] heapSort(int[] array) {
+            final long startTime = system.currentTimeMillis();
+        }
         int[] list = array;
 
         //implemented here
@@ -190,17 +206,16 @@ public class Sort {
             array[0] = array[i];
             array[i] = temp;
             heap(array, i, 0);
-        }
+
         return list;
     }
 
-
-   // public int[] bucketSort(int[] array) {
+        // public int[] bucketSort(int[] array){
+             final long startTime = system.currentTimeMillis();
         int[] list = array;
 
-
         //implemented here
-
+            final long startTime = system.currentTimeMillis();
         public int[] bucketSort ( int[] arrays, int max_value){
 
             int[] Bucket = new int[max_value + 1];
@@ -226,7 +241,9 @@ public class Sort {
     }
 
     public int[] shellSort(int[] array) {
-        int[] list = array;
+            final long startTime = system.currentTimeMillis();
+            this.executionTime = executionTime;
+            int[] list = array;
 
          //implemented here
         int n = array.length;
@@ -243,14 +260,6 @@ public class Sort {
         return list;
     }
 
-    public static void printSortedArray ( int[] array){
 
-
-        for(int i=0;i<array.length;i++){
-        System.out.println(array[i]);
-        }
-        }
-}
-        return list;
 
 
