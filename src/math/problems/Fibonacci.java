@@ -1,54 +1,29 @@
 package math.problems;
 
+import java.util.Scanner;
+
 public class Fibonacci {
 
-    /*
-    Write a method that will print or return at least 40 Fibonacci numbers
-
-      0,1,1,2,3,5,8,13
-     */
-
     public static void main(String[] args) {
-
-
-    }
-
-
-}
-public class Factorial {
-
-    public static void main(String[] args) {
-        /*
-         * Factorial of 5! = 5 x 4 X 3 X 2 X 1 = 120.
-         * Write a java program to find Factorial of a given number using Recursion as well as Iteration.
-         *
+         /*
+          Write 40 Fibonacci numbers with java.
+          0,1,1,2,3,5,8,13
          */
 
-        int factorial1 = factRecursion(5);
-        System.out.println("Recursion: Factorial of 5 is: " + factorial1);
+        int k, a = 1, b = 1;
+        Scanner sd = new Scanner(System.in);
+        k = 0;
+        System.out.println("Enter your number");
+        int n = sd.nextInt();
+        System.out.print("1 1 ");
+        while (k <= n) {
+            k = a + b;
+            if(k>=n)
+                break;
+            System.out.print(k + " ");
+            a = b;
+            b = k;
 
-        int factorial2=5;
-        System.out.println("Iteration: Factorial of "+factorial2+" is : "+factIteration(factorial2));
-    }
-
-    //Method for finding Factorial by Recursion
-    public static int factRecursion(int n) {
-        int output;
-        if (n == 1) {
-            return 1;
         }
-        output = factRecursion(n - 1) * n;
-        return output;
     }
-
-    //Method for finding Factorial by Iteration
-    public static int factIteration(int n){
-        int fact=1;
-        for(int i=1; i<=n;i++){
-            fact=fact*i;
-        }
-        return fact;
-    }
-
-
 }

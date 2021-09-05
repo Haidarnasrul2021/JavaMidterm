@@ -1,11 +1,7 @@
 package design;
 
-import databases.ConnectToSqlDB;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FortuneEmployee {
 
@@ -16,90 +12,93 @@ public class FortuneEmployee {
      * as a Software Developer.(employee.info.system) package is given as an outline,you need to elaborate
      * more to design an application that will meet for fortune 500 Employee Information
      * Services.
-     *
+     * <p>
      * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
-     *
      **/
-    //
+    public static void main(String[] args) {
+        EmployeeInfo employee1 = new EmployeeInfo(100, "12345 maven road, IL, 0978");
+        EmployeeInfo employee2 = new EmployeeInfo("Josh", 102, "345 nower street, CO, 7875", 'M');
+        EmployeeInfo employee3 = new EmployeeInfo("Ash", "PROD", 104, "11734 brown street, NJ, 0809", "USA Citizen");
 
-    public static void main(String[] args) throws Exception, NullPointerException{
+        employee1.assignDepartment();
+        employee2.benefitLayout();
+        employee3.holidayBonus();
 
-        String mission = "We want to maintain 15% yearly growth of the company.";
-        String vision = "We want to contribute for the betterment of economy of the country.";
+//		//resident status
+//		employee1.setResidentStatus("USA Citizen");
+//		System.out.println(employee1.getResidentStatus());
+//		employee2.setResidentStatus("USA Citizen");
+//		System.out.println(employee2.getResidentStatus());
+//		employee3.setResidentStatus("Resident");
+//		System.out.println(employee3.getResidentStatus());
+//		employee4.setResidentStatus("H1V");
+//		System.out.println(employee4.getResidentStatus());
+//		employee5.setResidentStatus("USA Citizen");
+//		System.out.println(employee5.getResidentStatus());
+//		employee6.setResidentStatus("H1V");
+//		System.out.println(employee6.getResidentStatus());
 
-        EmployeeInfo employee1 = new EmployeeInfo("Cristiano Ronaldo", 222100);
-        EmployeeInfo employee2 = new EmployeeInfo("Lionel Messi", 222101);
-        EmployeeInfo employee3 = new EmployeeInfo("Zinedine Zidane", 222102);
-        EmployeeInfo employee4 = new EmployeeInfo("Adson Pele", 222103);
-        EmployeeInfo employee5 = new EmployeeInfo("Diego Maradona", 222104);
-
-        employee1.assignDepartment("Research & Development");
-        employee2.assignDepartment("Information Technology");
-        employee3.assignDepartment("Account & Finance");
-        employee4.assignDepartment("Manufacturing & Import");
-        employee5.assignDepartment("Sales & Marketing");
-
-        employee1.setSalary(10000);
-        employee1.calculateSalary(employee1.getSalary());
-        employee2.setSalary(12000);
-        employee2.calculateSalary(employee2.getSalary());
-        employee3.setSalary(10000);
-        employee3.calculateSalary(employee3.getSalary());
-        employee4.setSalary(1100);
-        employee4.calculateSalary(employee4.getSalary());
-        employee5.setSalary(11000);
-        employee5.calculateSalary(employee5.getSalary());
-
-        employee1.describeCompany();
-        employee1.describeCompany(mission, vision);
-
-        employee1.setPerformance(5);
-        double bonus222100 = employee1.calculateEmployeeBonus(employee1.getSalary(), employee1.getPerformance());
-        employee2.setPerformance(4);
-        double bonus222101 = employee2.calculateEmployeeBonus(employee2.getSalary(), employee2.getPerformance());
-        employee3.setPerformance(3);
-        double bonus222102 = employee3.calculateEmployeeBonus(employee3.getSalary(), employee3.getPerformance());
-        employee4.setPerformance(2);
-        double bonus222103 = employee4.calculateEmployeeBonus(employee4.getSalary(), employee4.getPerformance());
-        employee5.setPerformance(1);
-        double bonus222104 = employee4.calculateEmployeeBonus(employee5.getSalary(), employee5.getPerformance());
-
-        EmployeeInfo.calculateEmployeePension(employee1.getSalary());
-        EmployeeInfo.calculateEmployeeBonus(employee1.getSalary(),employee1.getPerformance());
-
-        Map<Integer, List<Object>> employeeInfo = new HashMap<Integer, List<Object>>();
-        List<Object> employeeRecord222100 = new ArrayList<Object>();
-        employeeRecord222100.add(employee1.employeeName());
-        employeeRecord222100.add(employee1.employeeId());
-        employeeRecord222100.add(bonus222100);
-
-        List<Object> employeeRecord222101 = new ArrayList<Object>();
-        employeeRecord222101.add(employee2.employeeName());
-        employeeRecord222101.add(employee2.employeeId());
-        employeeRecord222101.add(bonus222101);
-
-        employeeInfo.put(222100, employeeRecord222100);
-        employeeInfo.put(222101, employeeRecord222101);
-
-        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
-
-        connectToSqlDB.createTableFromStringToMySql("employee_record", "employee_id", "employee_info");
+        System.out.println(employee1.calculateSalary(3456.67));
+        System.out.println(employee2.calculateSalary(2345.10));
+        System.out.println(employee3.calculateSalary(6789.0));
 
 
-        for (Integer obj : employeeInfo.keySet()) {
-            for (Object obj1 : employeeInfo.get(obj)) {
-                //System.out.println(obj1);
-                List<String> list1 = new ArrayList<>();
-                list1.add(obj.toString());
-                list1.add(obj.toString());
-                connectToSqlDB.InsertDataFromArrayListToMySql(list1, "employee_record", "employee_id", "employee_info");
+        EmployeeInfo.calculateEmployeeBonus(10, 10, 56789);
+        EmployeeInfo.calculateEmployeeBonus(7, 4, 67898);
+        EmployeeInfo.calculateEmployeeBonus(3, 1, 55679);
+
+
+        System.out.println("*****EMPLOYEE 1****");
+        //employee 1- bonus and pension
+        employee1.setEmployeePoints(10);
+        employee1.setEmployeeSalary(56789);
+        EmployeeInfo.calculateEmployeeBonus(employee1.getEmployeePoints(), 10, employee1.getEmployeeSalary());
+        EmployeeInfo.calculateEmployeePension(employee1.getEmployeeSalary());
+
+        System.out.println("*****EMPLOYEE 2****");
+        //employee 2- bonus and pension
+        employee2.setEmployeePoints(7);
+        employee2.setEmployeeSalary(67898);
+        EmployeeInfo.calculateEmployeeBonus(employee2.getEmployeePoints(), 4, employee2.getEmployeeSalary());
+        EmployeeInfo.calculateEmployeePension(employee2.getEmployeeSalary());
+
+
+        System.out.println("*****EMPLOYEE 3****");
+        //employee 3- bonus and pension
+        employee3.setEmployeePoints(6);
+        employee3.setEmployeeSalary(55679);
+        EmployeeInfo.calculateEmployeeBonus(employee3.getEmployeePoints(), 1, employee2.getEmployeeSalary());
+        EmployeeInfo.calculateEmployeePension(employee3.getEmployeeSalary());
+
+
+        List<EmployeeInfo> lists = new ArrayList<>();
+        lists.add(employee1);
+        lists.add(employee2);
+        lists.add(employee3);
+        Iterator<EmployeeInfo> iterate = lists.iterator();
+        while (iterate.hasNext()) {
+            EmployeeInfo empInfo = iterate.next();
+            System.out.println(empInfo.name + " , " + empInfo.employeePoints + " , " + empInfo.employeeSalary + " , " + empInfo.residentStatus + " , " + empInfo.employeeId);
+
+            //Store employee data in database
+            List<String> employees = new ArrayList<>(lists.size());
+            for (EmployeeInfo employee : lists) {
+                employees.add(employee.name);
+                employees.add(employee.residentStatus);
+                employees.add(String.valueOf(employee.employeePoints));
+                employees.add(String.valueOf(employee.employeeSalary));
+                employees.add(String.valueOf(employee.employeeId));
+
+            }
+            // ConnectToSqlDB.insertDataFromArrayListToSqlTable(employees, "employee_table", "data");
+
+            //read from the database
+            try {
+                //  ConnectToSqlDB.readDataBase("employee_table","data");
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 
-        System.out.println("Reading from database");
-        List<String> empRec = connectToSqlDB.readDataBase("employee_record", "employee_id", "employee_info");
-        for (String emp : empRec) {
-            System.out.println(emp);
-        }
     }
 }

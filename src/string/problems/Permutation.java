@@ -5,53 +5,29 @@ public class Permutation {
     public static void main(String[] args) {
 
         /*
-        Permutation of String "ABC" is "ABC" "BAC" "BCA" "ACB" "CAB" "CBA".
-
-        Write Java program to compute all permutations of any given String
+         * Permutation of String "ABC" is "ABC" "BAC" "BCA" "ACB" "CAB" "CBA".
+         * Write Java program to compute all Permutation of a String
+         *
          */
+        permute("ABC");
 
 
-/**
- * Created by mrahman on 08/31/2021
- */
-        public class Permutation {
 
-            public static void main(String[] args) {
-
-                /*
-                 * Permutation of String "ABC" is "ABC" "BAC" "BCA" "ACB" "CAB" "CBA".
-                 * Write Java program to compute all Permutation of a String
-                 *
-                 */
-                String str = "ABCD";
-                int n = str.length();
-                System.out.println("Permutations of ABC are: ");
-                Permutation permutation = new Permutation();
-                permutation.permute(str, 0, n-1);
-
-            }
-            private void permute(String str, int l, int r)
-            {
-                if (l == r)
-                    System.out.println(str);
-                else
-                {
-                    for (int i = l; i <= r; i++)
-                    {
-                        str = swap(str,l,i);
-                        permute(str, l+1, r);
-                        str = swap(str,l,i);
-                    }
-                }
-            }
-
-            public String swap(String a, int i, int j)
-            {
-                char temp;
-                char[] charArray = a.toCharArray();
-                temp = charArray[i] ;
-                charArray[i] = charArray[j];
-                charArray[j] = temp;
-                return String.valueOf(charArray);
-            }
+    }
+    public static void permute(String per){
+        if(per == null || per.length()==0){
+            System.out.println("needs few letters");
+            return;
         }
+        permute("",per);
+    }
+    private static void permute(String prefix, String remaining){
+        if(remaining.length()==0){
+            System.out.println(prefix);
+            return;
+        }
+        for(int i=0; i<remaining.length(); i++ ){
+            permute(prefix +remaining.charAt(i), remaining.substring(0,i)+remaining.substring(i+1,remaining.length()));
+        }
+    }
+}

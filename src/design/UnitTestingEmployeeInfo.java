@@ -1,28 +1,36 @@
 package design;
 
-import org.testng.Assert;
+import org.junit.Assert;
+import org.junit.Test;
+
+
 
 public class UnitTestingEmployeeInfo {
     public static void main(String[] args) {
-
         //Write Unit Test for all the methods has been implemented in this package.
 
-        //
-                double pension=EmployeeInfo.calculateEmployeePension(6000);
-                try{
-                    Assert.assertEquals(200,200);
-                    System.out.println("Test Passed");
-                } catch (AssertionError as) {
-                    System.out.println("Test Failed");
-                }
+    }
 
-                double bonus = EmployeeInfo.calculateEmployeeBonus(8000, 5);
-                try {
-                    Assert.assertEquals(9600,9600);
-                    System.out.println("Test Passed");
-                } catch (AssertionError as) {
-                    System.out.println("Test Failed");
-                }
-            }
-        }
+    @Test
+    public void calculateEmployeeBonusTesting1() {
+        double expectedBonus = 68146.8;
+        double actualBonus = EmployeeInfo.calculateEmployeeBonus(10, 10, 56789);
+        Assert.assertNotEquals("Incorrect bonus ammount", expectedBonus, actualBonus);
+    }
 
+    @Test
+    public void calculateEmployeeBonusTesting() {
+        double expectedBonus = 68147.8;
+        double actualBonus = EmployeeInfo.calculateEmployeeBonus(10, 10, 56789);
+        Assert.assertNotEquals("Incorrect bonus ammount", expectedBonus, actualBonus);
+    }
+
+    @Test
+    public void calculateEmployeePensionTesting() {
+        double expectedPension = 14197.25;
+        double actualPension = EmployeeInfo.calculateEmployeePension(28141);
+        Assert.assertNotEquals("Incorrect bonus ammount", expectedPension, actualPension);
+    }
+
+
+}
